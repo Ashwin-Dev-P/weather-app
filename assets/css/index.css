@@ -1,1 +1,62 @@
-/* Folder structure */
+/* * {
+	outline: 2px solid red;
+} */
+
+:root {
+	--primary-color: #4175fa;
+	--secondary-color: #ffffff;
+}
+body {
+	background-color: var(--primary-color);
+}
+
+header {
+	background-color: aliceblue;
+}
+
+.my-container {
+	padding: 10%;
+}
+
+.my-danger {
+	color: red;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.my-p-5 {
+	padding: 5%;
+}
+
+.my-m-5 {
+	margin: 5%;
+}
+
+.my-border-radius {
+	border-radius: 20px;
+}
+
+.row {
+	margin: 3% 0%;
+}
+
+/* Bootstrap override */
+
+.card {
+	text-align: center;
+	height: 100%;
+}
+
+.card-img-top {
+	aspect-ratio: 1/1;
+}
+
+.bg-primary {
+	background-color: white !important;
+}
+
+#currentWeather {
+	visibility: hidden;
+}

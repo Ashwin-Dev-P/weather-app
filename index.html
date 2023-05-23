@@ -1,1 +1,95 @@
-<!-- Initial folder structure -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- XSS protection using CSP -->
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="default-src 'self'; 
+            script-src 'nonce-2726c7f26c' 'unsafe-inline';object-src 'none'; 
+            connect-src https://api.openweathermap.org/data/2.5/weather https://api.openweathermap.org/data/2.5/forecast ;
+            base-uri 'self';
+            img-src https://openweathermap.org/img/wn/;
+            style-src-elem 'self' https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css
+            "
+		/>
+
+		<meta name="description" content="Weather forecast app" />
+		<meta name="keywords" content="weather, forecast, weather map" />
+		<meta name="author" content="Ashwin Dev P" />
+
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather</title>
+
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+		/>
+
+		<link rel="stylesheet" type="text/css" href="./assets/css/index.css" />
+	</head>
+	<body>
+		<header class="shadow-sm p-1">
+			<h1 class="text-center">Weather App</h1>
+		</header>
+		<main class="container">
+			<div class="row">
+				<section class="col-xs-12 col-md-6">
+					<form class="shadow-sm p-4 bg-primary h-100 my-border-radius">
+						<div class="form-group">
+							<label for="cities">Select a city</label>
+
+							<select id="cities" class="form-control">
+								<option value="Chennai">Chennai</option>
+								<option value="Madurai">Madurai</option>
+								<option value="Thanjavur">Thanjavur</option>
+								<option value="Kanyakumari">Kanyakumari</option>
+							</select>
+						</div>
+					</form>
+				</section>
+
+				<section
+					id="currentWeather"
+					class="col-xs-12 col-md-6 text-center mt-3 mt-md-0"
+				>
+					<div class="text-center shadow-sm p-4 bg-primary my-border-radius">
+						<div id="weather-image"></div>
+						<p id="main-weather"></p>
+						<p id="description"></p>
+					</div>
+				</section>
+			</div>
+			<div class="container">
+				<div id="forecast" class="row text-center"></div>
+			</div>
+
+			<noscript class="row">
+				<dialog open class="w-80 my-danger text-center p-5">
+					Your browser doesn't support JavaScript. Javascript is required for
+					this app to function properly
+				</dialog>
+			</noscript>
+
+			<!-- contains the api key -->
+			<script
+				src="./assets/js/credentails.js"
+				nonce="2726c7f26c"
+				type="text/javascript"
+			></script>
+			<script
+				src="./assets/js/weather.js"
+				nonce="2726c7f26c"
+				type="text/javascript"
+			></script>
+			<script
+				src="./assets/js/WeatherForecastFiveDays.js"
+				nonce="2726c7f26c"
+				type="text/javascript"
+			></script>
+		</main>
+	</body>
+</html>
